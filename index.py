@@ -9,8 +9,13 @@ for i, v in enumerate(perdoo_id_keys):
     print(f"{i+1}. {v}")
 choice = int(input("> "))
 
+print("Input start date in YYYY-MM-DD format")
+
+print("Input start date in YYYY-MM-DD format")
+start_date_variable = input("> ")
+
 print("Input cutoff date in YYYY-MM-DD format")
-date_variable = input("> ")
+cutoff_date_variable = input("> ")
 
 selected_kpi = perdoo_id_keys[choice - 1]
 
@@ -26,7 +31,8 @@ try:
               query all_commit {{
                 allCommits(
                   user_Id: "{perdoo_user_id}"
-                  commitDate_Lte: "{date_variable}T16:59:59+00:00"
+                  commitDate_Gte: "{start_date_variable}T16:59:59+00:00"
+                  commitDate_Lte: "{cutoff_date_variable}T16:59:59+00:00"
                 ) {{
                   edges {{
                     node {{
