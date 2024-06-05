@@ -61,7 +61,7 @@ try:
                 json={
                     "query": f"""
                       mutation delete_commit {{
-                        deleteCommit(input: {{id: "{commit_id}"}}) {{
+                        deleteCommit(input: {{id: "{to_be_deleted_commit}"}}) {{
                           commit {{
                             id
                             kpi {{
